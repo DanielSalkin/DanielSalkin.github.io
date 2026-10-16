@@ -217,10 +217,6 @@ main{min-height:calc(100vh - 68px)}
 .hero-topline{justify-content:flex-end}
 .bio-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .about-grid .bio-actions .outline-button{margin-top:0}
-.experience-intro-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
-.experience-intro-row>p{font-size:13px;color:var(--muted);margin:0}
-.experience-resume{flex-shrink:0;white-space:nowrap}
-@media(max-width:700px){.experience-intro-row{align-items:flex-start;flex-direction:column;gap:18px}}
 
 .rail-progress-marker{display:none}
 @media(min-width:701px){
