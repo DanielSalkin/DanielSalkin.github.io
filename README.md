@@ -96,3 +96,5 @@ Project dates use the user-supplied periods (Dash: Sep 2025–2026; CAN and Anal
 Headline punctuation uses a distinct Nord Aurora accent per page: orange for About, green for Projects, purple for Experience, yellow for Contact, and red for Credits & Licenses. The home headline sits near the top of the Formula-car image, and the Swerve project card uses the assembled-system photograph.
 
 Page headline accents and active navigation underlines follow Nord Aurora order starting at orange: About orange, Projects yellow, Experience green, Contact purple, Credits red. Project jump buttons are larger and left-aligned. Dash Integration closes the project and uses the purple routing layout beside the 23% footprint metric.
+
+Project navigation now uses fixed, outlined Nord buttons in the desktop left margin, with active-section highlighting and dates. On narrow screens the same labeled buttons stay fixed in a horizontal bottom rail so the content remains readable.
