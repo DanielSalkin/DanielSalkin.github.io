@@ -110,11 +110,11 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .contact-banner h2 span{color:#b48ead}
 
 /* Persistent, plain-text page index with inset markers and a bounded rail. */
-.page-projects main{padding-left:184px}
-.page-projects #projects{max-width:none;padding-inline:20px}
+.page-projects main{padding-left:156px}
+.page-projects #projects{max-width:1060px;padding-inline:clamp(28px,4vw,64px)}
 .projects-layout{display:block}
 .project-content{min-width:0}
-.page-projects .project-rail{--rail-accent:#d08770;position:fixed;top:116px;bottom:24px;left:16px;width:164px;display:flex;flex-direction:column;gap:18px;padding:4px 6px 4px 4px;margin:0;z-index:15;overflow-y:auto;scrollbar-width:thin;overscroll-behavior:contain}
+.page-projects .project-rail{--rail-accent:#d08770;position:fixed;top:116px;bottom:24px;left:12px;width:140px;display:flex;flex-direction:column;gap:18px;padding:4px 6px 4px 4px;margin:0;z-index:15;overflow-y:auto;scrollbar-width:thin;overscroll-behavior:contain}
 .project-rail-title{display:block;padding-left:26px;font-size:10px;font-weight:600;letter-spacing:.6px;color:var(--text);flex:none}
 .project-rail-links{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:14px;flex:1;min-height:426px}
 .project-rail-links::before{content:"";position:absolute;left:8px;top:37px;bottom:37px;width:1px;background:var(--line)}
@@ -139,3 +139,34 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 
 /* Preserve the diagram’s transparent background. */
 .page-projects #dash-pcb .system-diagram img{background:transparent;filter:none}
+
+/* Keep project narratives and media at a comfortable reading scale. */
+.page-projects .section-heading .page-title{font-size:clamp(38px,4.5vw,64px);letter-spacing:-3px}
+.page-projects .section-heading>p:last-child{font-size:12px;max-width:66ch}
+.page-projects .project h3{font-size:clamp(28px,3vw,38px);letter-spacing:-1.3px}
+.page-projects .project p{font-size:12px;line-height:1.9;max-width:76ch}
+.page-projects .project .project-deck{font-size:17px;line-height:1.65;max-width:60ch}
+.page-projects .project h4{font-size:13px}
+.page-projects .can-analysis h4{font-size:17px}
+.page-projects .project-grid{gap:24px}
+.page-projects #dash-pcb .project-grid>.dash-render{width:min(100%,680px)}
+.page-projects #dash-pcb .system-diagram{max-width:760px;margin-inline:auto}
+.page-projects .project-grid>figure .zoom,
+.page-projects #voron .project-grid>figure .zoom{height:320px}
+.page-projects .gallery img{height:240px}
+.page-projects #voron .gallery .zoom,
+.page-projects #analog-swerve .gallery .zoom{height:240px}
+.page-projects #analog-swerve .swerve-overview .zoom{height:300px}
+.page-projects .baking-gallery img{height:145px}
+.page-projects .output-schematic{width:min(100%,640px)}
+@media(max-width:700px){
+ .page-projects #projects{padding-inline:24px}
+ .page-projects .section-heading .page-title{font-size:42px;letter-spacing:-2px}
+ .page-projects .project-grid>figure .zoom,
+ .page-projects #voron .project-grid>figure .zoom{height:280px}
+ .page-projects #analog-swerve .swerve-overview .zoom{height:240px}
+}
+@media(max-width:520px){
+ .page-projects #analog-swerve .swerve-overview .zoom{height:auto}
+ .page-projects .baking-gallery img{height:130px}
+}
