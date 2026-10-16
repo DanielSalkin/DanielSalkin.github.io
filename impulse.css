@@ -217,7 +217,12 @@ main{min-height:calc(100vh - 68px)}
 .hero-topline{justify-content:flex-end}
 .bio-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .about-grid .bio-actions .outline-button{margin-top:0}
-.experience-resume{margin:0 0 32px}
+.experience-intro-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.experience-intro-row>p{font-size:13px;color:var(--muted);margin:0}
+.experience-resume{display:flex;flex-direction:column;gap:3px;padding:8px 0 8px 20px;border-left:1px solid var(--line);font-size:10px;color:var(--muted);white-space:nowrap}
+.experience-resume strong{font-size:12px;font-weight:500;color:var(--accent)}
+.experience-resume:hover strong{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:700px){.experience-intro-row{align-items:flex-start;flex-direction:column;gap:18px}.experience-resume{padding:0;border-left:0}}
 .rail-progress-marker{display:none}
 @media(min-width:701px){
  .rail-progress-marker{display:block;position:absolute;left:4px;width:9px;height:9px;border:1px solid var(--rail-accent);border-radius:2px;background:var(--rail-accent);transform:translateY(-50%);pointer-events:none;z-index:2}
