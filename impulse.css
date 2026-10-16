@@ -110,11 +110,11 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .contact-banner h2 span{color:#b48ead}
 
 /* Persistent, plain-text page index with inset markers and a bounded rail. */
-.page-projects main{padding-left:156px}
+.page-projects main{padding-left:174px}
 .page-projects #projects{max-width:1060px;padding-inline:clamp(28px,4vw,64px)}
 .projects-layout{display:block}
 .project-content{min-width:0}
-.page-projects .project-rail{--rail-accent:#d08770;position:fixed;top:116px;bottom:24px;left:12px;width:140px;display:flex;flex-direction:column;gap:18px;padding:4px 6px 4px 4px;margin:0;z-index:15;overflow-y:auto;scrollbar-width:thin;overscroll-behavior:contain}
+.page-projects .project-rail{--rail-accent:#d08770;position:fixed;top:116px;bottom:24px;left:32px;width:136px;display:flex;flex-direction:column;gap:18px;padding:4px 6px 4px 4px;margin:0;z-index:15;overflow-y:auto;scrollbar-width:thin;overscroll-behavior:contain}
 .project-rail-title{display:block;padding-left:26px;font-size:10px;font-weight:600;letter-spacing:.6px;color:var(--text);flex:none}
 .project-rail-links{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:14px;flex:1;min-height:426px}
 .project-rail-links::before{content:"";position:absolute;left:8px;top:37px;bottom:37px;width:1px;background:var(--line)}
@@ -170,3 +170,15 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
  .page-projects #analog-swerve .swerve-overview .zoom{height:auto}
  .page-projects .baking-gallery img{height:130px}
 }
+
+/* A slimmer header and an inset project index. */
+.site-header{height:68px}
+html{scroll-padding-top:90px}
+main{min-height:calc(100vh - 68px)}
+.page-projects .project-rail{top:96px}
+@media(max-width:760px){
+ .site-header{height:60px}
+ .site-header nav{top:59px}
+ .menu-toggle{padding:8px 10px}
+}
+@media(max-width:700px){.page-projects .project-rail{top:auto}}
