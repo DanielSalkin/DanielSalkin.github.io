@@ -1,0 +1,13 @@
+Create me an engineering portfolio website that can be hosted on github.io. Refer to https://jonathan-tao.github.io/, https://www.nickwalkerengineering.com/, and https://docs.google.com/presentation/d/1b-LQHIkXYjGDglPgQAmFn7BEtxfpE3pJTwZI9GOTyyM/edit?slide=id.g3c5d87aecc2_0_1080#slide=id.g3c5d87aecc2_0_1080 as references for successful portfolios. 
+
+Refer to documentation for photos and pdfs of different things relevant to this portfolio, and my resume for more information about my employment.
+
+For style refer to the nord theme: https://www.nordtheme.com/ and make the website dark mode. Stylistically I would like the focus to be on rounded geometric rectangles, but make sure to avoid the ai esque styling. The nord theme website itself is a good example of good style. A font should be along the lines of jetbrains mono. A major style goal should be readability and flow when scrolling similar to jonathan’s website. If deemed necessary https://nordify.stephenokita.com/ can be used to make all the images fit with the color theme
+
+
+The sight architecture should be similar to Jonothans with sidebar navigation and a logical flow. I want to have an introduction to myself/landing page, projects page, experience page, and contact information. Major points I want to cover are my Dash PCB, Can Integrity testing, mixed signal analog swerve, and voron 3d printers. Put most of the weight on the formula projects with some on Analog swerve and printer. The portfolio slides idea pdf is there from preliminary work I did
+
+For Can Integrity, the photos are of the rise time pre and post filter changes and can transceiver reuse block we made. For 3d printer refer to it as a voron printer since the photos I have are of my voron v0 made for my robotics team.
+
+As far as software implementation, copy the jonathan-tao.github.io implementation but fade the ascii art
+

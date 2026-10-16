@@ -1,0 +1,7 @@
+# Unused image experiment and generated deployment outputs
+assets/nordified/
+_site/
+release/
+__pycache__/
+*.pyc
+*:Zone.Identifier
