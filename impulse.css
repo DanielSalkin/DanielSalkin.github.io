@@ -211,3 +211,5 @@ main{min-height:calc(100vh - 68px)}
  .page-experience main,.page-contact main{padding-inline:0}
  .page-experience .section,.page-contact .contact{padding-inline:24px}
 }
+
+.page-intro .selected-section{border-radius:12px}
