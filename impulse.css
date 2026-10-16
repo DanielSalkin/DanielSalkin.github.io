@@ -194,3 +194,9 @@ main{min-height:calc(100vh - 68px)}
  .page-projects #projects{padding-inline:28px}
  .page-projects .project-rail{left:28px;width:136px}
 }
+
+/* Waypoints map section starts onto the available vertical rail. */
+@media(min-width:701px){
+ .project-rail-links{display:block}
+ .page-projects .project-rail a{position:absolute;left:0;right:0}
+}

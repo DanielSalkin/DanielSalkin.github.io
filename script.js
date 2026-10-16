@@ -39,6 +39,27 @@ document.addEventListener('keydown', event => {
 const projectLinks = [...document.querySelectorAll('.project-rail a')];
 if (projectLinks.length) {
   const projectSections = projectLinks.map(link => document.getElementById(link.hash.slice(1)));
+  const railLinks = document.querySelector('.project-rail-links');
+  const positionWaypoints = () => {
+    if (window.matchMedia('(max-width: 700px)').matches) {
+      projectLinks.forEach(link => link.style.removeProperty('top'));
+      return;
+    }
+    const starts = projectSections.map(section => section.getBoundingClientRect().top + window.scrollY);
+    const span = starts.at(-1) - starts[0];
+    const travel = Math.max(0, railLinks.clientHeight - projectLinks[0].offsetHeight);
+    projectLinks.forEach((link, index) => {
+      link.style.top = `${span > 0 ? (starts[index] - starts[0]) / span * travel : 0}px`;
+    });
+  };
+  // Image loading, equation typesetting, and resizing can change section lengths.
+  const waypointObserver = new ResizeObserver(positionWaypoints);
+  projectSections.forEach(section => waypointObserver.observe(section));
+  waypointObserver.observe(railLinks);
+  window.addEventListener('resize', positionWaypoints);
+  window.addEventListener('load', positionWaypoints);
+  document.fonts?.ready.then(positionWaypoints);
+  positionWaypoints();
   let framePending = false;
   let navigationTarget = null;
   let settleTimer;
