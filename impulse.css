@@ -33,7 +33,7 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-projects .project-index{justify-content:center}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 /* Schematics retain their complete bounds and use the available reading width. */
-.page-projects #dash-pcb .schematic-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.page-projects #dash-pcb .schematic-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
 .page-projects #dash-pcb .schematic-gallery .zoom{height:auto;width:100%;padding:0}
 .page-projects #dash-pcb .schematic-gallery img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0;border-radius:6px}
 .page-projects #dash-pcb .system-diagram img{height:auto;max-height:none;padding:4px}
@@ -51,3 +51,14 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-projects #analog-swerve .detail-content>.swerve-gallery{width:100%;margin:4px 0 16px}
 @media(max-width:760px){.page-projects #dash-pcb .schematic-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.page-projects #dash-pcb .schematic-gallery{grid-template-columns:minmax(0,1fr)}}
+
+/* A restrained timeline rail anchors the experience entries to their dates. */
+.timeline{position:relative}
+.timeline::before{content:"";position:absolute;left:8px;top:44px;bottom:40px;width:1px;background:var(--line)}
+.timeline article{position:relative;padding-left:32px}
+.timeline article::before{content:"";position:absolute;left:3px;top:42px;width:11px;height:11px;border:2px solid var(--accent);border-radius:3px;background:var(--bg)}
+.timeline .timeline-current::before{background:var(--orange);border-color:var(--orange)}
+.timeline .timeline-upcoming::before{border-style:dashed}
+.timeline-date{font-variant-numeric:tabular-nums}
+.project-meta>span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+@media(max-width:760px){.timeline article{padding-left:28px}.timeline::before{top:43px}.timeline article::before{top:40px}}
