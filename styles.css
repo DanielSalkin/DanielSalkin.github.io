@@ -27,7 +27,7 @@ main{min-height:100vh;display:flex;flex-direction:column}main>footer{margin-top:
 .organization-logo.mortorq{width:96px;filter:grayscale(1) sepia(.25) hue-rotate(150deg) saturate(.6)}
 
 .button-secondary{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:12px 17px}.button-secondary:hover{background:var(--line);color:var(--text)}
-.swerve-photo{height:360px;object-fit:contain!important;background:var(--panel)}.swerve-gallery img{object-fit:contain!important;background:var(--panel)}
+
 .organization-logo,.organization-logo.iem,.organization-logo.mortorq{filter:none}
 
 
@@ -83,3 +83,24 @@ main{min-height:100vh;display:flex;flex-direction:column}main>footer{margin-top:
 mjx-container{max-width:100%}
 @media(max-width:760px){.credits-link{font-size:8px;margin:0;max-width:52px;line-height:1.4}}
 @media(max-width:450px){.page-projects .gallery,.page-projects .scope-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Filled photo frames: crop the original image without changing its proportions. */
+.page-projects #voron .project-grid>figure,
+.page-projects #analog-swerve .project-grid>figure{width:100%;max-width:none}
+.page-projects #voron .zoom,
+.page-projects #analog-swerve .zoom{display:block;width:100%;height:300px;overflow:hidden;padding:0;background:none}
+.page-projects #voron .project-grid>figure .zoom,
+.page-projects #analog-swerve .project-grid>figure .zoom{height:380px}
+.page-projects #voron .zoom img,
+.page-projects #analog-swerve .zoom img{display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover!important;padding:0;background:none}
+.page-projects #analog-swerve .swerve-photo{object-position:50% 62%}
+.page-projects #voron .printer{object-position:50% 42%}
+#analog-swerve img[src$="betterTrackingADC.JPG"]{object-position:50% 45%}
+#analog-swerve img[src$="servoControlUnit.JPG"]{object-position:50% 58%}
+#voron img[src$="IMG_0532.jpeg"]{object-position:50% 55%}
+#voron img[src$="IMG_0526.jpeg"]{object-position:50% 55%}
+@media(max-width:760px){
+ .page-projects #voron .zoom,.page-projects #analog-swerve .zoom{height:240px}
+ .page-projects #voron .project-grid>figure .zoom,
+ .page-projects #analog-swerve .project-grid>figure .zoom{height:300px}
+}
