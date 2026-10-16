@@ -223,3 +223,12 @@ main{min-height:calc(100vh - 68px)}
  .rail-progress-marker{display:block;position:absolute;left:4px;width:9px;height:9px;border:1px solid var(--rail-accent);border-radius:2px;background:var(--rail-accent);transform:translateY(-50%);pointer-events:none;z-index:2}
  .project-rail a[aria-current="location"]::before{background:var(--bg);border-color:var(--muted)}
 }
+
+/* Align the hero labels on one baseline and lift the headline into the sky. */
+.page-intro .hero-topline{justify-content:space-between;align-items:baseline;gap:20px}
+.page-intro .hero-topline .eyebrow{margin:0;font-size:9px;line-height:1.85;letter-spacing:1.4px;color:var(--text)}
+.page-intro .cinematic-hero .hero-title{margin-top:10px}
+@media(max-width:760px){
+ .page-intro .hero-topline .eyebrow{font-size:8px}
+ .page-intro .cinematic-hero .hero-title{margin-top:10px}
+}
