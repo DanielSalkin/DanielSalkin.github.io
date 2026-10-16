@@ -94,3 +94,5 @@ The Dash schematic gallery uses three columns (power, CAN interfaces, controller
 Project dates use the user-supplied periods (Dash: Sep 2025–2026; CAN and Analog Swerve: 2026; Voron: 2024). Project keyword tags have been removed. Dash retains only its power and CAN transceiver sheets. The experience timeline and expanded descriptions are grounded in the supplied resume; SpaceX remains explicitly upcoming.
 
 Headline punctuation uses a distinct Nord Aurora accent per page: orange for About, green for Projects, purple for Experience, yellow for Contact, and red for Credits & Licenses. The home headline sits near the top of the Formula-car image, and the Swerve project card uses the assembled-system photograph.
+
+Page headline accents and active navigation underlines follow Nord Aurora order starting at orange: About orange, Projects yellow, Experience green, Contact purple, Credits red. Project jump buttons are larger and left-aligned. Dash Integration closes the project and uses the purple routing layout beside the 23% footprint metric.

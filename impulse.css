@@ -30,7 +30,7 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-projects .project,.page-projects .can-analysis,.page-projects .baking-gallery{max-width:none;width:100%}
 .page-projects .project p{max-width:none}
 .page-projects .project-grid>figure,.page-projects .project-grid>div{justify-self:stretch}
-.page-projects .project-index{justify-content:center}
+.page-projects .project-index{justify-content:flex-start}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 /* Schematics retain their complete bounds and use the available reading width. */
 .page-projects #dash-pcb .schematic-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
@@ -71,11 +71,11 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-intro .cinematic-hero .hero-bottom{margin-top:auto}
 .feature-swerve>img{object-position:50% 64%}
 /* Each page's headline ends in a distinct Nord Aurora color. */
-.page-intro h1 .headline-period{color:#d08770}
-.page-projects h1 .headline-period{color:#a3be8c}
-.page-experience h1 .headline-period{color:#b48ead}
-.page-contact h1 .headline-period{color:#ebcb8b}
-.page-notices h1 .headline-period{color:#bf616a}
+.page-intro h1 .headline-period{color:var(--page-aurora)}
+.page-projects h1 .headline-period{color:var(--page-aurora)}
+.page-experience h1 .headline-period{color:var(--page-aurora)}
+.page-contact h1 .headline-period{color:var(--page-aurora)}
+.page-notices h1 .headline-period{color:var(--page-aurora)}
 @media(max-width:760px){.page-intro .cinematic-hero .hero-title{margin-top:24px}.page-intro .cinematic-hero .hero-title h1{font-size:clamp(46px,9vw,66px);letter-spacing:-3px}}
 
 .page-projects #dash-pcb .project-grid>.dash-render{width:min(100%,900px);justify-self:center;margin:0 auto}
@@ -87,3 +87,22 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .integration-layout .result{justify-content:center;margin:0}
 .integration-layout .result strong{font-size:54px}
 @media(max-width:600px){.integration-layout{grid-template-columns:minmax(0,1fr);gap:20px}.integration-layout .result{justify-content:flex-start}}
+
+/* Nord Aurora order, starting with orange on the landing page and wrapping to red. */
+.page-intro{--page-aurora:#d08770}
+.page-projects{--page-aurora:#ebcb8b}
+.page-experience{--page-aurora:#a3be8c}
+.page-contact{--page-aurora:#b48ead}
+.page-notices{--page-aurora:#bf616a}
+.site-header nav a{border-bottom:2px solid transparent}
+.site-header nav a[href="index.html"]{--nav-aurora:#d08770}
+.site-header nav a[href="projects.html"]{--nav-aurora:#ebcb8b}
+.site-header nav a[href="experience.html"]{--nav-aurora:#a3be8c}
+.site-header nav a[href="contact.html"]{--nav-aurora:#b48ead}
+.site-header nav a[aria-current="page"]{border-bottom-color:var(--page-aurora)}
+.site-header nav a:hover{border-bottom-color:var(--nav-aurora)}
+.page-projects .project-index{justify-content:flex-start;gap:12px}
+.page-projects .project-index a{display:inline-flex;align-items:center;min-height:44px;padding:12px 18px;font-size:12px;font-weight:500;background:#434c5e;color:var(--text);border:1px solid #81a1c1;border-radius:6px;box-shadow:0 2px 0 #202633;transition:background .15s,border-color .15s}
+.page-projects .project-index a:hover{background:#4c566a;border-color:var(--page-aurora);color:var(--text)}
+.page-projects .project-index a:focus-visible{outline:2px solid var(--page-aurora);outline-offset:3px}
+@media(max-width:760px){.page-projects .project-index{gap:10px}.page-projects .project-index a{font-size:11px;padding:10px 14px}}
