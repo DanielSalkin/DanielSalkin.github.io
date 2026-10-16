@@ -132,3 +132,22 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
  .project-rail .rail-label{font-size:10px}
  .project-rail small{display:none}
 }
+
+/* Evenly distributed project buttons with the orange timeline accent. */
+.page-projects .project-rail{--rail-accent:#d08770;height:calc(100dvh - 140px);justify-content:space-evenly;gap:16px}
+.page-projects .project-rail a{min-height:74px}
+.project-rail a::before{top:calc(50% - 4px)}
+.project-rail small{white-space:normal;font-size:9px;line-height:1.5}
+.page-projects .project-rail a:hover,
+.page-projects .project-rail a[aria-current="location"]{border-color:var(--rail-accent)}
+.page-projects .project-rail a[aria-current="location"]{color:var(--rail-accent)}
+.project-rail a[aria-current="location"]::before{background:var(--rail-accent);border-color:var(--rail-accent)}
+.page-projects .project-rail a:focus-visible{outline-color:var(--rail-accent)}
+/* scroll-padding on html already accounts for the fixed header. */
+.page-projects .project{scroll-margin-top:20px}
+@media(max-width:700px){
+ .page-projects main{padding-bottom:110px}
+ .page-projects .project-rail{height:auto;justify-content:flex-start;gap:8px}
+ .page-projects .project-rail a{min-height:64px;min-width:135px}
+ .page-projects .project-rail small{display:block;max-width:150px}
+}
