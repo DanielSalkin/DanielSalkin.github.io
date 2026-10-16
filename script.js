@@ -39,6 +39,31 @@ document.addEventListener('keydown', event => {
 const projectLinks = [...document.querySelectorAll('.project-rail a')];
 if (projectLinks.length) {
   const projectSections = projectLinks.map(link => document.getElementById(link.hash.slice(1)));
+  const railLinks = document.querySelector('.project-rail-links');
+  const positionWaypoints = () => {
+    const mobile = window.matchMedia('(max-width: 700px)').matches;
+    if (mobile) {
+      projectLinks.forEach(link => link.style.removeProperty('margin-bottom'));
+      return;
+    }
+    const starts = projectSections.map(section => section.getBoundingClientRect().top);
+    const span = starts[starts.length - 1] - starts[0];
+    const occupied = projectLinks.reduce((total, link) => total + link.offsetHeight, 0);
+    const available = Math.max(0, railLinks.clientHeight - occupied);
+    projectLinks.forEach((link, index) => {
+      const weight = index < starts.length - 1 && span > 0
+        ? (starts[index + 1] - starts[index]) / span : 0;
+      link.style.marginBottom = `${Math.max(0, weight * available)}px`;
+    });
+  };
+  // Keep all labels in normal flow; distribute only the spare vertical space.
+  const waypointObserver = new ResizeObserver(positionWaypoints);
+  projectSections.forEach(section => waypointObserver.observe(section));
+  waypointObserver.observe(railLinks);
+  window.addEventListener('resize', positionWaypoints);
+  window.addEventListener('load', positionWaypoints);
+  document.fonts?.ready.then(positionWaypoints);
+  positionWaypoints();
   let framePending = false;
   let navigationTarget = null;
   let settleTimer;
