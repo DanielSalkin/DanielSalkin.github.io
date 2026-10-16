@@ -23,3 +23,27 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 @media(max-width:760px){.site-header{height:72px;gap:16px}.site-header .wordmark{font-size:14px}.menu-toggle{display:block}.site-header nav{display:none;position:absolute;top:71px;left:0;right:0;padding:20px var(--gutter);background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:8px}.site-header.menu-open nav{display:flex}.site-header nav a{font-size:13px;padding:12px 0}.cinematic-hero{margin:10px;min-height:590px;height:calc(100svh - 92px);max-height:760px;padding:22px}.hero-topline{font-size:8px}.hero-topline>span:last-child{display:none}.hero-title h1{font-size:clamp(48px,10vw,76px);letter-spacing:-3px}.hero-bottom{align-items:start;flex-direction:column;gap:22px}.hero-bottom p{font-size:10px}.hero-scene{object-position:57% 65%}.about-section,.selected-section{padding:44px var(--gutter)}.section-marker{font-size:8px;margin-bottom:30px}.about-grid{grid-template-columns:1fr;gap:30px}.about-grid figure{max-width:420px}.about-grid img{height:380px}.about-grid h2,.selected-section h2{font-size:42px;letter-spacing:-2px}.about-grid p{font-size:12px}.feature-grid{grid-template-columns:1fr}.feature-card{height:340px}.feature-label h3{font-size:30px}.contact-banner{margin:10px;padding:36px 24px}.contact-banner h2{font-size:48px}.site-footer{align-items:start;flex-wrap:wrap;font-size:8px}.site-footer>div{gap:20px}.site-footer>span{display:block}.section{padding:32px var(--gutter)}.section-heading{padding:16px 0 30px}.section-heading .page-title{font-size:48px;letter-spacing:-2.5px}.project-index{gap:8px;margin-bottom:32px}.project-index a{font-size:8px;padding:8px 10px}.project h3{font-size:32px;letter-spacing:-1px}.project p{font-size:12px}.project .project-deck{font-size:17px}.page-projects .project-grid>figure .zoom,.page-projects #voron .project-grid>figure .zoom,.page-projects #analog-swerve .project-grid>figure .zoom{height:320px}.page-projects #voron .gallery .zoom,.page-projects #analog-swerve .gallery .zoom{height:240px}.gallery img{height:240px}.project-meta{letter-spacing:.7px}.baking-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.baking-gallery img{height:145px}.timeline article,.education{grid-template-columns:1fr;gap:16px}.timeline h3,.education h3{font-size:22px}.skills{grid-template-columns:1fr;gap:22px}.skills p{font-size:12px}.page-contact .contact{padding:48px var(--gutter);min-height:calc(100svh - 220px)}.page-contact .contact .page-title{font-size:48px;letter-spacing:-2.5px}.contact-links{gap:20px;font-size:11px}.notices .page-title{font-size:40px}}
 @media(max-width:450px){.page-projects .gallery,.page-projects .scope-grid{grid-template-columns:1fr}.baking-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-card{height:310px}.hero-title h1{font-size:49px}.hero-title .eyebrow{font-size:8px}.hero-bottom p br{display:none}.email{font-size:20px}.site-footer .wordmark{width:100%}.site-footer>div{display:flex}}
 @media(prefers-reduced-motion:reduce){.feature-card>img{transition:none}}
+
+/* Align all Projects sections to the same centered content boundary. */
+.page-projects #projects{width:100%;max-width:1240px;margin-inline:auto;padding:32px clamp(18px,2.5vw,36px)}
+.page-projects .section-heading{max-width:none;width:100%;margin:0;padding-top:16px}
+.page-projects .project,.page-projects .can-analysis,.page-projects .baking-gallery{max-width:none;width:100%}
+.page-projects .project p{max-width:none}
+.page-projects .project-grid>figure,.page-projects .project-grid>div{justify-self:stretch}
+.page-projects .project-index{justify-content:center}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+/* Schematics retain their complete bounds and use the available reading width. */
+.page-projects #dash-pcb .schematic-gallery{grid-template-columns:minmax(0,1fr);gap:28px}
+.page-projects #dash-pcb .schematic-gallery .zoom{height:auto;width:100%;padding:0}
+.page-projects #dash-pcb .schematic-gallery img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0;border-radius:6px}
+.page-projects #dash-pcb .system-diagram img{height:auto;max-height:none;padding:4px}
+.can-outputs{margin:36px 0}
+.output-schematic{margin:20px 0!important}
+.page-projects .output-schematic img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0;background:#fff;filter:none;border-radius:6px}
+/* Keep the entire physical prototype and CAD model visible together. */
+.swerve-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start;width:100%}
+.page-projects #analog-swerve .swerve-overview figure{min-width:0;width:100%}
+.page-projects #analog-swerve .swerve-overview .zoom{display:flex;align-items:center;justify-content:center;width:100%;height:430px;background:var(--panel);padding:0}
+.page-projects #analog-swerve .swerve-overview .zoom img{display:block;width:100%;height:100%;max-height:none;object-fit:contain!important;padding:0;filter:none}
+@media(max-width:760px){.hero-actions{gap:10px}.page-projects #analog-swerve .swerve-overview .zoom{height:300px}.swerve-overview{gap:14px}}
+@media(max-width:520px){.swerve-overview{grid-template-columns:minmax(0,1fr)}.page-projects #analog-swerve .swerve-overview .zoom{height:auto}.page-projects #analog-swerve .swerve-overview .zoom img{height:auto}}
