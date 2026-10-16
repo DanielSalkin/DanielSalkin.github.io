@@ -40,6 +40,28 @@ const projectLinks = [...document.querySelectorAll('.project-rail a')];
 if (projectLinks.length) {
   const projectSections = projectLinks.map(link => document.getElementById(link.hash.slice(1)));
   const railLinks = document.querySelector('.project-rail-links');
+  const progressMarker = document.createElement('span');
+  progressMarker.className = 'rail-progress-marker';
+  progressMarker.setAttribute('aria-hidden', 'true');
+  railLinks.append(progressMarker);
+  function updateProgressMarker() {
+    if (window.matchMedia('(max-width: 700px)').matches) return;
+    const readingOffset = document.querySelector('.site-header').getBoundingClientRect().bottom + 72;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const anchors = projectSections.map(section => Math.max(0, Math.min(maxScroll,
+      section.getBoundingClientRect().top + window.scrollY - readingOffset)));
+    const y = window.scrollY;
+    let index = 0;
+    while (index < anchors.length - 2 && y >= anchors[index + 1]) index++;
+    const span = anchors[index + 1] - anchors[index];
+    const fraction = span > 0 ? Math.max(0, Math.min(1, (y - anchors[index]) / span)) : 0;
+    const railTop = railLinks.getBoundingClientRect().top;
+    const centers = projectLinks.map(link => {
+      const rect = link.getBoundingClientRect();
+      return rect.top - railTop + railLinks.scrollTop + rect.height / 2;
+    });
+    progressMarker.style.top = `${centers[index] + fraction * (centers[index + 1] - centers[index])}px`;
+  }
   const positionWaypoints = () => {
     const mobile = window.matchMedia('(max-width: 700px)').matches;
     if (mobile) {
@@ -55,6 +77,7 @@ if (projectLinks.length) {
         ? (starts[index + 1] - starts[index]) / span : 0;
       link.style.marginBottom = `${Math.max(0, weight * available)}px`;
     });
+    updateProgressMarker();
   };
   // Keep all labels in normal flow; distribute only the spare vertical space.
   const waypointObserver = new ResizeObserver(positionWaypoints);
@@ -75,6 +98,7 @@ if (projectLinks.length) {
   };
   const updateProjectRail = () => {
     framePending = false;
+    updateProgressMarker();
     if (navigationTarget !== null) {
       selectProject(navigationTarget);
       return;

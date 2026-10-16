@@ -213,3 +213,13 @@ main{min-height:calc(100vh - 68px)}
 }
 
 .page-intro .selected-section{border-radius:12px}
+
+.hero-topline{justify-content:flex-end}
+.bio-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.about-grid .bio-actions .outline-button{margin-top:0}
+.experience-resume{margin-top:32px}
+.rail-progress-marker{display:none}
+@media(min-width:701px){
+ .rail-progress-marker{display:block;position:absolute;left:4px;width:9px;height:9px;border:1px solid var(--rail-accent);border-radius:2px;background:var(--rail-accent);transform:translateY(-50%);pointer-events:none;z-index:2}
+ .project-rail a[aria-current="location"]::before{background:var(--bg);border-color:var(--muted)}
+}
