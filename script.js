@@ -17,3 +17,18 @@ lightbox.querySelector('button').addEventListener('click', () => lightbox.close(
 lightbox.addEventListener('click', event => { if (event.target === lightbox) lightbox.close(); });
 lightbox.addEventListener('close', () => { image.removeAttribute('src'); previousFocus?.focus(); });
 
+
+const menuButton = document.querySelector('.menu-toggle');
+const siteHeader = document.querySelector('.site-header');
+menuButton?.addEventListener('click', () => {
+  const open = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(open));
+  siteHeader.classList.toggle('menu-open', open);
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && siteHeader?.classList.contains('menu-open')) {
+    siteHeader.classList.remove('menu-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.focus();
+  }
+});

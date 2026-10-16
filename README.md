@@ -59,3 +59,30 @@ The Dash project now presents its system diagram inline and includes power, CAN 
 The introduction uses a side-by-side portrait layout, experience pairs dates with descriptions, and baking uses its compact thumbnail grid. Project narratives use one vertical column with paired image galleries. CAN equations are inline LaTeX between `\(` and `\)` delimiters, rendered by MathJax 3.2.2 from jsDelivr on the Projects page. Math rendering needs internet access; the raw LaTeX remains in the HTML if the CDN is unavailable. No MathJax library files are bundled. Footer back-to-top links are removed; the introduction has Explore my work and Get in touch buttons.
 
 Voron and Analog Swerve use full-width photo frames (380 px main photos, 300 px gallery photos on desktop), with `object-fit: cover` and per-photo focal positions. This crops rather than stretches the source; the image viewer retains the entire original.
+
+## Impulse-inspired design branch
+
+This checkout is on `design/impulse-nord`. It replaces the sidebar presentation with a horizontal header, cinematic Formula-car hero, selected-work image panels, and larger section typography, while retaining the Nord palette, rounded rectangles, project content, and local image assets. The reference is https://www.impulsespace.com/; no reference-site artwork, text, or source code is copied.
+
+Preview this checkout independently:
+
+```sh
+cd /tmp/portfolio-impulse-nord
+python3 -m http.server 8001 --bind 127.0.0.1
+```
+
+The original checkout can simultaneously run on port 8000:
+
+```sh
+cd /home/Turquoisee/portfolio
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Open http://localhost:8001 for this variant and http://localhost:8000 for the original. Each server must serve its own checkout, not just use a different port in the same directory. `/tmp` is temporary: import the branch into the original repository when ready to retain it:
+
+```sh
+cd /home/Turquoisee/portfolio
+git fetch /tmp/portfolio-impulse-nord design/impulse-nord:design/impulse-nord
+```
+
+You can then create a durable worktree at a location of your choice. The branch has not been pushed or deployed; the production workflow triggers only on pushes to `main`.
