@@ -67,7 +67,7 @@ This checkout is on `design/impulse-nord`. It replaces the sidebar presentation 
 Preview this checkout independently:
 
 ```sh
-cd /tmp/portfolio-impulse-nord
+cd /home/Turquoisee/portfolio/release/impulse-nord
 python3 -m http.server 8001 --bind 127.0.0.1
 ```
 
@@ -78,11 +78,11 @@ cd /home/Turquoisee/portfolio
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open http://localhost:8001 for this variant and http://localhost:8000 for the original. Each server must serve its own checkout, not just use a different port in the same directory. `/tmp` is temporary: import the branch into the original repository when ready to retain it:
+Open http://localhost:8001 for this variant and http://localhost:8000 for the original. Each server must serve its own checkout, not just use a different port in the same directory. This is an isolated Git checkout under the ignored `release/` directory. To import its branch into the original repository:
 
 ```sh
 cd /home/Turquoisee/portfolio
-git fetch /tmp/portfolio-impulse-nord design/impulse-nord:design/impulse-nord
+git fetch /home/Turquoisee/portfolio/release/impulse-nord design/impulse-nord:design/impulse-nord
 ```
 
 You can then create a durable worktree at a location of your choice. The branch has not been pushed or deployed; the production workflow triggers only on pushes to `main`.
