@@ -32,3 +32,34 @@ document.addEventListener('keydown', event => {
     menuButton.focus();
   }
 });
+
+// Keep the project timeline's current section in sync with scrolling.
+const projectLinks = [...document.querySelectorAll('.project-rail a')];
+if (projectLinks.length) {
+  const projectSections = projectLinks.map(link => document.getElementById(link.hash.slice(1)));
+  let framePending = false;
+  const updateProjectRail = () => {
+    let current = 0;
+    const marker = document.querySelector('.site-header').getBoundingClientRect().bottom + 72;
+    projectSections.forEach((section, index) => {
+      if (section.getBoundingClientRect().top <= marker) current = index;
+    });
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 8) {
+      current = projectLinks.length - 1;
+    }
+    projectLinks.forEach((link, index) => {
+      if (index === current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    framePending = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!framePending) {
+      framePending = true;
+      requestAnimationFrame(updateProjectRail);
+    }
+  }, { passive: true });
+  window.addEventListener('resize', updateProjectRail);
+  window.addEventListener('load', updateProjectRail);
+  updateProjectRail();
+}

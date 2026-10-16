@@ -106,3 +106,19 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-projects .project-index a:hover{background:#4c566a;border-color:var(--page-aurora);color:var(--text)}
 .page-projects .project-index a:focus-visible{outline:2px solid var(--page-aurora);outline-offset:3px}
 @media(max-width:760px){.page-projects .project-index{gap:10px}.page-projects .project-index a{font-size:11px;padding:10px 14px}}
+
+.contact-banner h2 span{color:#b48ead}
+/* Compact sticky project navigation echoes the Experience timeline rail. */
+.projects-layout{display:grid;grid-template-columns:154px minmax(0,1fr);gap:30px;align-items:start}
+.project-content{min-width:0}
+.page-projects .project-rail{position:sticky;top:112px;display:flex;flex-direction:column;gap:0;align-self:start;padding:6px 0;margin:0}
+.project-rail::before{content:"";position:absolute;left:7px;top:28px;bottom:32px;width:1px;background:var(--line)}
+.page-projects .project-rail a{position:relative;display:flex;align-items:center;min-height:62px;padding:9px 0 9px 25px;margin:0;border:0;border-radius:0;background:none;box-shadow:none;font-size:10px;line-height:1.5;color:var(--muted)}
+.project-rail a::before{content:"";position:absolute;left:3px;top:22px;width:9px;height:9px;background:var(--bg);border:1px solid var(--muted);border-radius:2px}
+.project-rail .rail-label{margin:0;color:inherit;font-size:10px}
+.project-rail small{display:block;margin-top:4px;font-size:8px;letter-spacing:.3px;color:var(--muted)}
+.page-projects .project-rail a:hover,.page-projects .project-rail a[aria-current="location"]{color:var(--page-aurora)}
+.project-rail a[aria-current="location"]::before{background:var(--page-aurora);border-color:var(--page-aurora)}
+.page-projects .project-rail a:focus-visible{outline:2px solid var(--page-aurora);outline-offset:3px}
+@media(max-width:900px){.projects-layout{grid-template-columns:125px minmax(0,1fr);gap:22px}.project-rail .rail-label{font-size:9px}}
+@media(max-width:600px){.projects-layout{grid-template-columns:28px minmax(0,1fr);gap:14px}.page-projects .project-rail{top:94px}.page-projects .project-rail a{min-height:44px;padding:0;width:28px}.project-rail a::before{top:17px}.project-rail::before{top:27px;bottom:27px}.project-rail .rail-label{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.page-projects .project-rail a:focus-visible .rail-label{clip-path:none;overflow:visible;width:max-content;height:auto;left:24px;z-index:2;background:var(--panel);padding:8px;border-radius:4px}}
