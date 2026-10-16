@@ -92,3 +92,5 @@ Impulse-variant refinements: Projects uses a centered 1240 px maximum content re
 The Dash schematic gallery uses three columns (power, CAN interfaces, controller), with responsive stacking. Swerve validation photos sit between steering control and input tracking. CAN outputs describe the 4 Mbit/s on-car telemetry bus; its reuse schematic is centered and capped at 760 px.
 
 Project dates use the user-supplied periods (Dash: Sep 2025–2026; CAN and Analog Swerve: 2026; Voron: 2024). Project keyword tags have been removed. Dash retains only its power and CAN transceiver sheets. The experience timeline and expanded descriptions are grounded in the supplied resume; SpaceX remains explicitly upcoming.
+
+Headline punctuation uses a distinct Nord Aurora accent per page: orange for About, green for Projects, purple for Experience, yellow for Contact, and red for Credits & Licenses. The home headline sits near the top of the Formula-car image, and the Swerve project card uses the assembled-system photograph.
