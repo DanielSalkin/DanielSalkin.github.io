@@ -151,3 +151,9 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
  .page-projects .project-rail a{min-height:64px;min-width:135px}
  .page-projects .project-rail small{display:block;max-width:150px}
 }
+
+/* Plain-text project links retain the persistent rail and generous hit areas. */
+.page-projects .project-rail a,
+.page-projects .project-rail a:hover,
+.page-projects .project-rail a[aria-current="location"]{background:transparent;border:0;border-radius:0;box-shadow:none}
+.page-projects .project-rail a:hover{color:var(--rail-accent)}
