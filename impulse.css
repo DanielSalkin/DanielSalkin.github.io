@@ -33,12 +33,12 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-projects .project-index{justify-content:center}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 /* Schematics retain their complete bounds and use the available reading width. */
-.page-projects #dash-pcb .schematic-gallery{grid-template-columns:minmax(0,1fr);gap:28px}
+.page-projects #dash-pcb .schematic-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
 .page-projects #dash-pcb .schematic-gallery .zoom{height:auto;width:100%;padding:0}
 .page-projects #dash-pcb .schematic-gallery img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0;border-radius:6px}
 .page-projects #dash-pcb .system-diagram img{height:auto;max-height:none;padding:4px}
 .can-outputs{margin:36px 0}
-.output-schematic{margin:20px 0!important}
+.output-schematic{width:min(100%,760px);margin:24px auto!important}
 .page-projects .output-schematic img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0;background:#fff;filter:none;border-radius:6px}
 /* Keep the entire physical prototype and CAD model visible together. */
 .swerve-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start;width:100%}
@@ -47,3 +47,7 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-projects #analog-swerve .swerve-overview .zoom img{display:block;width:100%;height:100%;max-height:none;object-fit:contain!important;padding:0;filter:none}
 @media(max-width:760px){.hero-actions{gap:10px}.page-projects #analog-swerve .swerve-overview .zoom{height:300px}.swerve-overview{gap:14px}}
 @media(max-width:520px){.swerve-overview{grid-template-columns:minmax(0,1fr)}.page-projects #analog-swerve .swerve-overview .zoom{height:auto}.page-projects #analog-swerve .swerve-overview .zoom img{height:auto}}
+
+.page-projects #analog-swerve .detail-content>.swerve-gallery{width:100%;margin:4px 0 16px}
+@media(max-width:760px){.page-projects #dash-pcb .schematic-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.page-projects #dash-pcb .schematic-gallery{grid-template-columns:minmax(0,1fr)}}

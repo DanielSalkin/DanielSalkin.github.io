@@ -88,3 +88,5 @@ git fetch /home/Turquoisee/portfolio/release/impulse-nord design/impulse-nord:de
 You can then create a durable worktree at a location of your choice. The branch has not been pushed or deployed; the production workflow triggers only on pushes to `main`.
 
 Impulse-variant refinements: Projects uses a centered 1240 px maximum content region with reduced side padding. Altium sheets display individually at full width with original aspect ratios. The CAN reuse schematic is presented after the trade study under Outputs, without a required enlargement step. The Analog Swerve overview pairs the full prototype photo and module CAD, stacking on narrow screens. Resume is linked from the home hero; footer links use “Credits & Licenses” consistently.
+
+The Dash schematic gallery uses three columns (power, CAN interfaces, controller), with responsive stacking. Swerve validation photos sit between steering control and input tracking. CAN outputs describe the 4 Mbit/s on-car telemetry bus; its reuse schematic is centered and capped at 760 px.
