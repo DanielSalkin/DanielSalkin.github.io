@@ -197,5 +197,17 @@ main{min-height:calc(100vh - 68px)}
 
 /* Weight spare space by project length while preserving label-sized rows. */
 @media(min-width:701px){
- .project-rail-links{justify-content:flex-start;gap:0;min-height:370px}
+ .project-rail-links{justify-content:flex-start;gap:0;min-height:280px}
+ .page-projects .project-rail a{flex-basis:56px;height:56px;padding-block:4px}
+ .project-rail-links::before{top:28px;bottom:28px}
+}
+
+/* Carry the restrained outer margins across the other pages. */
+.page-intro main{max-width:1320px;margin-inline:auto;padding-inline:24px}
+.page-experience main,.page-contact main{max-width:1120px;margin-inline:auto;padding-inline:32px}
+.page-experience .section,.page-contact .contact{padding-inline:32px}
+@media(max-width:760px){
+ .page-intro main{padding-inline:0}
+ .page-experience main,.page-contact main{padding-inline:0}
+ .page-experience .section,.page-contact .contact{padding-inline:24px}
 }
