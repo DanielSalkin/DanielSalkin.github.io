@@ -98,3 +98,18 @@ Headline punctuation uses a distinct Nord Aurora accent per page: orange for Abo
 Page headline accents and active navigation underlines follow Nord Aurora order starting at orange: About orange, Projects yellow, Experience green, Contact purple, Credits red. Project jump buttons are larger and left-aligned. Dash Integration closes the project and uses the purple routing layout beside the 23% footprint metric.
 
 Project navigation now uses fixed, outlined Nord buttons in the desktop left margin, with active-section highlighting and dates. On narrow screens the same labeled buttons stay fixed in a horizontal bottom rail so the content remains readable.
+
+
+Image optimization runs during the Pages deployment. Source photos stay untouched;
+the packaged site gets responsive WebP images (up to 1600 px for page images,
+2400 px for expanded views). PNG diagrams use lossless WebP encoding. To preview
+the same optimized output locally:
+
+```bash
+python3 -m venv /tmp/portfolio-build-env
+/tmp/portfolio-build-env/bin/pip install -r scripts/requirements-build.txt
+python3 scripts/package-site.py --output _site
+/tmp/portfolio-build-env/bin/python scripts/optimize-site-images.py --site _site
+python3 scripts/check-site.py --site _site --require-optimized
+python3 -m http.server 8001 --directory _site
+```

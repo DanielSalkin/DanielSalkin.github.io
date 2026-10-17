@@ -232,3 +232,56 @@ main{min-height:calc(100vh - 68px)}
  .page-intro .hero-topline .eyebrow{font-size:8px}
  .page-intro .cinematic-hero .hero-title{margin-top:10px}
 }
+
+/* Responsive layout corrections: constrain grid children rather than hiding overflow. */
+.about-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.about-grid>*,.timeline article>*,.education>*,.skills>*,.section-heading{min-width:0}
+.site-header nav a{display:inline-flex;align-items:center;gap:8px;line-height:1.4}
+.site-header nav a span{display:inline-block;margin:0;font-size:1em;line-height:1}
+.outline-button span,.email>span{display:inline-block;line-height:1;flex-shrink:0}
+.site-footer{flex-wrap:wrap}
+.site-footer>div{flex-wrap:wrap}
+.site-footer>*{min-width:0}
+.timeline h3 a,.education h3 a{display:grid;grid-template-columns:100px minmax(0,1fr);gap:16px;align-items:center}
+.timeline h3 a span,.education h3 a span{overflow-wrap:anywhere}
+.timeline .organization-logo,.education .organization-logo{display:block;width:100%;height:56px;object-fit:contain;object-position:center}
+.timeline article::before{top:43px}
+.feature-card>img{z-index:0;pointer-events:none}
+.feature-shade{z-index:1;pointer-events:none}
+.feature-label{position:relative;z-index:2;pointer-events:none}
+.feature-card:focus-visible>img{transform:scale(1.025)}
+.feature-card:hover>img{transform:scale(1.025)}
+.scope-grid img{height:auto}
+.contact-links{flex-wrap:wrap;row-gap:14px}
+.page-intro .cinematic-hero .hero-title h1{overflow-wrap:anywhere}
+@media(max-width:760px){
+ .about-grid,.feature-grid{grid-template-columns:minmax(0,1fr)}
+ .page-experience .section-heading .page-title,
+ .page-contact .contact .page-title{font-size:clamp(28px,7.5vw,48px);letter-spacing:-1.5px;line-height:1.15;overflow-wrap:anywhere}
+ .page-intro .cinematic-hero{padding:22px;min-height:520px}
+ .page-intro .cinematic-hero .hero-title h1{font-size:clamp(34px,9.5vw,66px);letter-spacing:-2px}
+ .page-intro .hero-topline{gap:12px}
+ .page-intro .hero-topline .eyebrow{letter-spacing:1px}
+ .timeline article,.education{grid-template-columns:minmax(0,1fr);padding-left:28px;gap:14px}
+ .timeline h3,.education h3{font-size:22px}
+ .timeline h3 a,.education h3 a{grid-template-columns:72px minmax(0,1fr);gap:12px}
+ .timeline .organization-logo,.education .organization-logo{height:40px}
+ .timeline article::before{top:43px}
+ .skills{grid-template-columns:minmax(0,1fr);padding-left:28px;gap:18px}
+ .skills h4,.skills p{margin-left:0}
+ .skills p,.education p{overflow-wrap:anywhere}
+ .site-footer{padding:24px;gap:16px;align-items:flex-start}
+ .site-footer .wordmark{white-space:normal;font-size:12px}
+ .site-footer>div{gap:16px}
+ .site-footer a{overflow-wrap:anywhere}
+ .page-contact .email{font-size:clamp(14px,4.4vw,24px);letter-spacing:-.5px}
+ .email>span{font-size:1em}
+}
+@media(prefers-reduced-motion:reduce){.feature-card:hover>img,.feature-card:focus-visible>img{transform:none}}
+.page-intro .about-section,.page-intro .selected-section{margin-inline:16px}
+.math-inline{display:inline-block;max-width:100%;overflow-x:auto;vertical-align:middle}
+.analysis-table{table-layout:fixed;overflow-wrap:anywhere}
+@media(max-width:760px){
+ .page-intro .about-section,.page-intro .selected-section{margin-inline:10px}
+}
