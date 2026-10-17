@@ -44,9 +44,14 @@ if (projectLinks.length) {
   progressMarker.className = 'rail-progress-marker';
   progressMarker.setAttribute('aria-hidden', 'true');
   railLinks.append(progressMarker);
+  const projectReadingOffset = () => {
+    const padding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    const margin = parseFloat(getComputedStyle(projectSections[0]).scrollMarginTop) || 0;
+    return padding + margin;
+  };
   function updateProgressMarker() {
     if (window.matchMedia('(max-width: 700px)').matches) return;
-    const readingOffset = document.querySelector('.site-header').getBoundingClientRect().bottom + 72;
+    const readingOffset = projectReadingOffset();
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const anchors = projectSections.map(section => Math.max(0, Math.min(maxScroll,
       section.getBoundingClientRect().top + window.scrollY - readingOffset)));
@@ -58,7 +63,7 @@ if (projectLinks.length) {
     const railTop = railLinks.getBoundingClientRect().top;
     const centers = projectLinks.map(link => {
       const rect = link.getBoundingClientRect();
-      return rect.top - railTop + railLinks.scrollTop + rect.height / 2;
+      return rect.top - railTop - railLinks.clientTop + railLinks.scrollTop + rect.height / 2;
     });
     progressMarker.style.top = `${centers[index] + fraction * (centers[index + 1] - centers[index])}px`;
   }
@@ -104,7 +109,7 @@ if (projectLinks.length) {
       return;
     }
     let current = 0;
-    const marker = document.querySelector('.site-header').getBoundingClientRect().bottom + 72;
+    const marker = projectReadingOffset();
     projectSections.forEach((section, index) => {
       if (section.getBoundingClientRect().top <= marker) current = index;
     });

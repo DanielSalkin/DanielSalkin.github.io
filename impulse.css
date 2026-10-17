@@ -285,3 +285,10 @@ main{min-height:calc(100vh - 68px)}
 @media(max-width:760px){
  .page-intro .about-section,.page-intro .selected-section{margin-inline:10px}
 }
+
+/* Give the line, stationary waypoints, and moving marker one shared axis. */
+@media(min-width:701px){
+ .project-rail-links{--waypoint-axis:8.5px}
+ .project-rail-links::before{left:var(--waypoint-axis);transform:translateX(-50%)}
+ .project-rail a::before,.rail-progress-marker{left:var(--waypoint-axis);transform:translate(-50%,-50%)}
+}
