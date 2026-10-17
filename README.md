@@ -59,3 +59,63 @@ The Dash project now presents its system diagram inline and includes power, CAN 
 The introduction uses a side-by-side portrait layout, experience pairs dates with descriptions, and baking uses its compact thumbnail grid. Project narratives use one vertical column with paired image galleries. CAN equations are inline LaTeX between `\(` and `\)` delimiters, rendered by MathJax 3.2.2 from jsDelivr on the Projects page. Math rendering needs internet access; the raw LaTeX remains in the HTML if the CDN is unavailable. No MathJax library files are bundled. Footer back-to-top links are removed; the introduction has Explore my work and Get in touch buttons.
 
 Voron and Analog Swerve use full-width photo frames (380 px main photos, 300 px gallery photos on desktop), with `object-fit: cover` and per-photo focal positions. This crops rather than stretches the source; the image viewer retains the entire original.
+
+## Impulse-inspired design branch
+
+This checkout is on `design/impulse-nord`. It replaces the sidebar presentation with a horizontal header, cinematic Formula-car hero, selected-work image panels, and larger section typography, while retaining the Nord palette, rounded rectangles, project content, and local image assets. The reference is https://www.impulsespace.com/; no reference-site artwork, text, or source code is copied.
+
+Preview this checkout independently:
+
+```sh
+cd /home/Turquoisee/portfolio/release/impulse-nord
+python3 -m http.server 8001 --bind 127.0.0.1
+```
+
+The original checkout can simultaneously run on port 8000:
+
+```sh
+cd /home/Turquoisee/portfolio
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Open http://localhost:8001 for this variant and http://localhost:8000 for the original. Each server must serve its own checkout, not just use a different port in the same directory. This is an isolated Git checkout under the ignored `release/` directory. To import its branch into the original repository:
+
+```sh
+cd /home/Turquoisee/portfolio
+git fetch /home/Turquoisee/portfolio/release/impulse-nord design/impulse-nord:design/impulse-nord
+```
+
+You can then create a durable worktree at a location of your choice. The branch has not been pushed or deployed; the production workflow triggers only on pushes to `main`.
+
+Impulse-variant refinements: Projects uses a centered 1240 px maximum content region with reduced side padding. Altium sheets display individually at full width with original aspect ratios. The CAN reuse schematic is presented after the trade study under Outputs, without a required enlargement step. The Analog Swerve overview pairs the full prototype photo and module CAD, stacking on narrow screens. Resume is linked from the home hero; footer links use “Credits & Licenses” consistently.
+
+The Dash schematic gallery uses three columns (power, CAN interfaces, controller), with responsive stacking. Swerve validation photos sit between steering control and input tracking. CAN outputs describe the 4 Mbit/s on-car telemetry bus; its reuse schematic is centered and capped at 760 px.
+
+Project dates use the user-supplied periods (Dash: Sep 2025–2026; CAN and Analog Swerve: 2026; Voron: 2024). Project keyword tags have been removed. Dash retains only its power and CAN transceiver sheets. The experience timeline and expanded descriptions are grounded in the supplied resume; SpaceX remains explicitly upcoming.
+
+Headline punctuation uses a distinct Nord Aurora accent per page: orange for About, green for Projects, purple for Experience, yellow for Contact, and red for Credits & Licenses. The home headline sits near the top of the Formula-car image, and the Swerve project card uses the assembled-system photograph.
+
+Page headline accents and active navigation underlines follow Nord Aurora order starting at orange: About orange, Projects yellow, Experience green, Contact purple, Credits red. Project jump buttons are larger and left-aligned. Dash Integration closes the project and uses the purple routing layout beside the 23% footprint metric.
+
+Project navigation now uses fixed, outlined Nord buttons in the desktop left margin, with active-section highlighting and dates. On narrow screens the same labeled buttons stay fixed in a horizontal bottom rail so the content remains readable.
+
+
+Image optimization runs during the Pages deployment. Source photos stay untouched;
+the packaged site gets responsive WebP images (up to 1600 px for page images,
+2400 px for expanded views). PNG diagrams use lossless WebP encoding. To preview
+the same optimized output locally:
+
+```bash
+python3 -m venv /tmp/portfolio-build-env
+/tmp/portfolio-build-env/bin/pip install -r scripts/requirements-build.txt
+python3 scripts/package-site.py --output _site
+/tmp/portfolio-build-env/bin/python scripts/optimize-site-images.py --site _site
+python3 scripts/check-site.py --site _site --require-optimized
+python3 -m http.server 8001 --directory _site
+```
+
+To edit page sections, open `index.html`, `projects.html`, `experience.html`, or
+`notices.html` in this checkout. The HTML uses two-space indentation, one block
+per line, and comments identifying the main sections and projects. Paragraphs
+without inline markup wrap at 110 columns; inline equations stay intact.
+Reapply formatting after edits with `python3 scripts/format-html.py`.
