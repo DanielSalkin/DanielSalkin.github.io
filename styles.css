@@ -95,10 +95,10 @@ mjx-container{max-width:100%}
 .page-projects #analog-swerve .zoom img{display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover!important;padding:0;background:none}
 .page-projects #analog-swerve .swerve-photo{object-position:50% 62%}
 .page-projects #voron .printer{object-position:50% 42%}
-#analog-swerve img[src$="betterTrackingADC.JPG"]{object-position:50% 45%}
-#analog-swerve img[src$="servoControlUnit.JPG"]{object-position:50% 58%}
-#voron img[src$="IMG_0532.jpeg"]{object-position:50% 55%}
-#voron img[src$="IMG_0526.jpeg"]{object-position:50% 55%}
+#analog-swerve img.tracking-adc{object-position:50% 45%}
+#analog-swerve img.servo-control{object-position:50% 58%}
+#voron img.voron-motion{object-position:50% 55%}
+#voron img.voron-wiring{object-position:50% 55%}
 @media(max-width:760px){
  .page-projects #voron .zoom,.page-projects #analog-swerve .zoom{height:240px}
  .page-projects #voron .project-grid>figure .zoom,
