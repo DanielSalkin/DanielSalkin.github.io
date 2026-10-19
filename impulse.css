@@ -80,7 +80,7 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 
 .page-projects #dash-pcb .project-grid>.dash-render{width:min(100%,900px);justify-self:center;margin:0 auto}
 .page-projects #dash-pcb .dash-render img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0;background:none}
-.dash-integration{margin:32px 0;padding-top:22px;border-top:1px solid var(--line)}
+.dash-integration{margin:32px 0;padding-top:22px}
 .dash-integration>h4{color:var(--accent)}
 .integration-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,1fr);align-items:center;gap:32px;margin-top:24px}
 .page-projects #dash-pcb .integration-layout img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;padding:0}
@@ -144,10 +144,10 @@ h2{font-size:clamp(36px,4.8vw,68px);line-height:1.12;font-weight:500;letter-spac
 .page-projects .section-heading .page-title{font-size:clamp(38px,4.5vw,64px);letter-spacing:-3px}
 .page-projects .section-heading>p:last-child{font-size:12px;max-width:66ch}
 .page-projects .project h3{font-size:clamp(28px,3vw,38px);letter-spacing:-1.3px}
-.page-projects .project p{font-size:12px;line-height:1.9;max-width:none}
-.page-projects .project .project-deck{font-size:17px;line-height:1.65;max-width:none}
-.page-projects .project h4{font-size:13px}
-.page-projects .can-analysis h4{font-size:17px}
+.page-projects .project p{font-size:16px;line-height:1.85;max-width:none;color:#d8dee9}
+.page-projects .project .project-deck{font-size:17px;line-height:1.65;max-width:none;color:#d8dee9!important}
+.page-projects .project h4{font-size:22px;line-height:1.4;color:var(--accent)}
+.page-projects .can-analysis h4{font-size:22px}
 .page-projects .project-grid{gap:24px}
 .page-projects #dash-pcb .project-grid>.dash-render{width:min(100%,680px)}
 .page-projects #dash-pcb .system-diagram{max-width:760px;margin-inline:auto}
@@ -342,3 +342,30 @@ main{min-height:calc(100vh - 68px)}
 .page-experience .skills p{font-size:14px}
 .site-header nav a{font-size:12.83px;font-weight:700}
 @media(max-width:760px){.site-header nav a{font-size:15.17px}}
+
+/* Center baking subjects within the original uniform thumbnail frames. */
+.page-projects .baking-gallery .dessert-musketeers{object-position:50% 6%}
+.page-projects .baking-gallery .dessert-wedding{object-position:50% 24%;transform:scale(1.8);transform-origin:50% 35%}
+.page-projects .baking-gallery .dessert-matcha{object-position:50% 48%}
+
+.page-projects #can-integrity .scope-grid img[data-waveform-corners]{width:100%;height:auto;aspect-ratio:8/5;object-fit:contain;filter:none}
+
+.page-projects #analog-swerve .gallery .waveform-preview{height:240px}
+.page-projects #analog-swerve .waveform-preview img[data-waveform-corners]{width:100%;height:100%;aspect-ratio:auto;object-fit:fill!important;filter:none}
+
+/* Keep the same compact ending and project gap throughout the Projects page. */
+.page-projects .project{margin-bottom:32px}
+.page-projects .project:last-child{margin-bottom:0}
+.page-projects .project .detail-content{padding-bottom:0}
+.page-projects .project>:last-child,
+.page-projects .project-details>:last-child,
+.page-projects .detail-content>:last-child,
+.page-projects .can-analysis>:last-child,
+.page-projects .dash-integration>:last-child{margin-bottom:0}
+
+/* Position the hero headline near the upper-left corner of the car photo. */
+.page-intro .hero-topline{justify-content:flex-end}
+.page-intro .cinematic-hero .hero-title{position:absolute;top:24px;left:24px;margin-top:0}
+@media(max-width:760px){.page-intro .cinematic-hero .hero-title{top:18px;left:18px}}
+
+.page-intro .selected-section h2 .headline-period{color:#ebcb8b}
