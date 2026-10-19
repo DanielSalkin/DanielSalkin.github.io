@@ -369,3 +369,6 @@ main{min-height:calc(100vh - 68px)}
 @media(max-width:760px){.page-intro .cinematic-hero .hero-title{top:18px;left:18px}}
 
 .page-intro .selected-section h2 .headline-period{color:#ebcb8b}
+
+.page-intro .bio-actions .primary-button{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.page-intro .bio-actions .primary-button:hover{background:var(--text);border-color:var(--text)}
